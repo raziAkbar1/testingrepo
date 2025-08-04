@@ -98,10 +98,21 @@
           <option value="ai_bot">AI Chatbot</option>
           <option value="calendar">Calendar Setup</option>
         </select>
-
-        <button type="submit" class="btn">IMPORT NOW</button>
       </form>
-
+      <button
+        id="importBtn"
+        style="
+          padding: 12px 24px;
+          font-size: 16px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        "
+      >
+        IMPORT NOW
+      </button>
       <a
         href="https://yourtraininglink.com"
         target="_blank"
@@ -109,5 +120,44 @@
         >Training</a
       >
     </div>
+
+    <script>
+      document
+        .getElementById("importBtn")
+        .addEventListener("click", function () {
+          fetch(
+            "https://services.leadconnectorhq.com/opportunities/nYZGQe04TtAic1BJxKko",
+            {
+              method: "PUT",
+              headers: {
+                Accept: "application/json",
+                Authorization:
+                  "Bearer pit-c7ac3d7c-decb-4f2e-bf9f-526cc24eae51",
+                Version: "2021-07-28",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name: "Najeeb Test 1",
+              }),
+            }
+          )
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  "Request failed with status " + response.status
+                );
+              }
+              return response.json();
+            })
+            .then((data) => {
+              alert("Opportunity updated successfully!");
+              console.log(data);
+            })
+            .catch((error) => {
+              alert("Error: " + error.message);
+              console.error(error);
+            });
+        });
+    </script>
   </body>
 </html>
