@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Snapshot Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .container {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(to right, #007bff, #00bfff);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        text-decoration: none;
+      }
+
+      .training-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #007bff;
+        border-radius: 25px;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .training-btn::before {
+        content: "🎥";
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Select CRM Setup</h2>
+
+      <form action="#" method="POST">
+        <label for="branding">Select Branding Bundle</label>
+        <select id="branding" name="branding">
+          <option value="" disabled selected>-- Select --</option>
+          <option value="basic">Basic Branding</option>
+          <option value="premium">Premium Branding</option>
+          <option value="custom">Custom Branding</option>
+        </select>
+
+        <label for="addons">Add-Ons</label>
+        <select id="addons" name="addons">
+          <option value="" disabled selected>-- Select --</option>
+          <option value="sms">SMS Campaign</option>
+          <option value="ai_bot">AI Chatbot</option>
+          <option value="calendar">Calendar Setup</option>
+        </select>
+
+        <button type="submit" class="btn">IMPORT NOW</button>
+      </form>
+
+      <a
+        href="https://yourtraininglink.com"
+        target="_blank"
+        class="training-btn"
+        >Training</a
+      >
+    </div>
+  </body>
+</html>
