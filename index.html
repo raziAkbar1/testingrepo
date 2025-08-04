@@ -114,6 +114,10 @@
       document
         .getElementById("importBtn")
         .addEventListener("click", function () {
+          const now = new Date();
+          const timestamp = now.toLocaleString(); // e.g., "8/4/2025, 2:33:12 PM"
+
+          const nameWithTime = `Najeeb Test ${timestamp}`;
           fetch(
             "https://services.leadconnectorhq.com/opportunities/nYZGQe04TtAic1BJxKko",
             {
@@ -126,7 +130,7 @@
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                name: "Najeeb Test 1",
+                name: nameWithTime,
               }),
             }
           )
