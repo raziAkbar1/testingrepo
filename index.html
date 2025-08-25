@@ -172,7 +172,8 @@
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                snapshot: document.getElementById("snapshot"),
+                snapshot: document.getElementById("snapshot").textContent,
+                snapshotId: document.getElementById("snapshot").value,
               }),
             }
           )
